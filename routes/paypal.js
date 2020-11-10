@@ -13,6 +13,7 @@ router.get('/connect',async(req,res)=>{
 router.get('/success',async(req,res)=>{
 
     const {code}= req.query;
+    console.log('code : ',code)
     const {access_token,refresh_token} = await require('../utils/paypall')('authorization_code',code);
     console.log("access_token :: ",access_token)
     
