@@ -43,7 +43,7 @@ if (ENVIROMENT === "Development") {
 app.use(express.urlencoded({ extended: true }));
 // authMiddleware
 app.get("/", (req, res) => res.json({ msg: "Welcome to Paypal 0auth" }));
-app.use('/auth',require('./routes/paypal'))
+app.use('/paypal',require('./routes/paypal'))
 
 // routes
 url = "http://localhost:3000/connect/success"
