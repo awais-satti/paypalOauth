@@ -4,7 +4,7 @@ const router  = require('express').Router()
 
 
 router.get('/connect ',async(req,res)=>{
-    redirectUrl = "http://localhost:3000/paypal/success";
+    redirectUrl = "https://paypal-connect.herokuapp.com/paypal/success";
     const authorizationUrl = `https://www.sandbox.paypal.com/connect?flowEntry=static&client_id=${process.env.PAYPAL_CLIENT_ID}&scope=openid&redirect_uri=${redirectUrl}`
     res.redirect(authorizationUrl)
 
