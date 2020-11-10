@@ -3,7 +3,7 @@ const { default: Axios } = require('axios')
 const router  = require('express').Router()
 
 
-router.get('/connect ',async(req,res)=>{
+router.get('/connect',async(req,res)=>{
     redirectUrl = "https://paypal-connect.herokuapp.com/paypal/success";
     const authorizationUrl = `https://www.sandbox.paypal.com/connect?flowEntry=static&client_id=${process.env.PAYPAL_CLIENT_ID}&scope=openid&redirect_uri=${redirectUrl}`
     res.redirect(authorizationUrl)
@@ -28,6 +28,9 @@ router.get('/success',async(req,res)=>{
         }
         
     )
+    res.json({
+        Message:"done"
+    })
 
     console.log("user_Info : ",user_info)
 
