@@ -11,8 +11,7 @@ module.exports = async(grant_type='client_credentials',code=null)=>{
         }
         const basicAuth = encode(`${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_CLIENT_SECRET}`,"base64");
     
-    
-    
+
         const token = await axios.post(
             `${PaypalAuthApi}`,
             body,
